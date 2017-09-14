@@ -1,0 +1,17 @@
+{
+    files: [
+        "https?:\/\/.*\\.go-mpulse\\.net/boomerang/.*"
+    ],
+    ignore: [
+        {
+            functionName: "proxy_XMLHttpRequest"
+        },
+        {
+            functionName: "function.c.(anonymous function)"
+        },
+        {
+            lineNumber: 14,
+            columnNumber: 10416
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+//
+// Profile results:
+// 1 A(target.js) -> hit for target.js
+// 2 B(target.js) -> hit for target.js
+// 3 B(target.js), C(c.js) -> hit for target.js
+// 3 B(target.js), C(c.js) -> hit for target.js
+// 4 D(d.js) -> not hit - file doesn't match
+// 5 wrapper(target.js) -> not hit - ignored functionName
+// 6 wrapper(target.js) E(e.js) -> not hit - ignored functionName
+// 7 wrapper(target.js) -> not hit - ignored functionName
+// 8 wrapper(target.js) F(f.js) -> not hit - ignored functionName
+// 9 wrapper(target.js) F(f.js) G(target.js) -> hit - while first wrapper is ignored, G is still in target.js
+//
+{
+    config:{
+        files: [
+            ".*target.*"
+        ],
+        ignore: [
+            {
+                functionName: "wrapper"
+            }
+        ]
+    },
+    profile: {
+      "nodes": [
+        {
+          "id": 0,
+          "callFrame": {
+            "functionName": "(root)",
+            "scriptId": "0",
+            "url": "a.js",
+            "lineNumber": 1,
+            "columnNumber": 2
+          },
+          "children": [
+            1,
+            2,
+            4,
+            5,
+            7
+          ],
+          "hitCount": 0
+        },
+        {
+          "id": 1,
+          "callFrame": {
+            "functionName": "A",
+            "scriptId": "0",
+            "url": "target.js",
+            "lineNumber": 1,
+            "columnNumber": 2
+          },
+          "hitCount": 1
+        },
+        {
+          "id": 2,
+          "callFrame": {
+            "functionName": "B",
+            "scriptId": "1",
+            "url": "target.js",
+            "lineNumber": 3,
+            "columnNumber": 4
+          },
+          "hitCount": 1,
+          "children": [
+            3
+          ]
+        },
+        {
+          "id": 3,
+          "callFrame": {
+            "functionName": "C",
+            "scriptId": "2",
+            "url": "c.js",
+            "lineNumber": 5,
+            "columnNumber": 6
+          },
+          "hitCount": 2
+        },
+        {
+          "id": 4,
+          "callFrame": {
+            "functionName": "D",
+            "scriptId": "0",
+            "url": "d.js",
+            "lineNumber": 1,
+            "columnNumber": 2
+          },
+          "hitCount": 1
+        },
+        {
+          "id": 5,
+          "callFrame": {
+            "functionName": "wrapper",
+            "scriptId": "1",
+            "url": "target.js",
+            "lineNumber": 3,
+            "columnNumber": 4
+          },
+          "hitCount": 1,
+          "children": [
+            6
+          ]
+        },
+        {
+          "id": 6,
+          "callFrame": {
+            "functionName": "E",
+            "scriptId": "2",
+            "url": "e.js",
+            "lineNumber": 5,
+            "columnNumber": 6
+          },
+          "hitCount": 1
+        },
+        {
+          "id": 7,
+          "callFrame": {
+            "functionName": "wrapper",
+            "scriptId": "1",
+            "url": "target.js",
+            "lineNumber": 3,
+            "columnNumber": 4
+          },
+          "hitCount": 1,
+          "children": [
+            8
+          ]
+        },
+        {
+          "id": 8,
+          "callFrame": {
+            "functionName": "F",
+            "scriptId": "2",
+            "url": "f.js",
+            "lineNumber": 5,
+            "columnNumber": 6
+          },
+          "hitCount": 1,
+          "children": [
+            9
+          ]
+        },
+        {
+          "id": 9,
+          "callFrame": {
+            "functionName": "G",
+            "scriptId": "2",
+            "url": "target.js",
+            "lineNumber": 5,
+            "columnNumber": 6
+          },
+          "hitCount": 1
+        }
+      ],
+      "startTime": 1000,
+      "endTime": 2000,
+      "samples": [
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    results: {
+        startTime: 1000,
+        endTime: 2000,
+        duration: 1000,
+        sampleCount: 10,
+        timePerSample: 100,
+        cpuTime: 1000,
+        cpuTimeFiltered: 500,
+        idleTime: 0
+    }
+}

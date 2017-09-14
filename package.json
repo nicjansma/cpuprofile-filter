@@ -1,0 +1,28 @@
+{
+  "name": "cpuprofile-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/cpuprofile-filter.js",
+  "dependencies": {
+    "json5": "^0.5.1",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chrome-launcher": "^0.4.0",
+    "chrome-remote-interface": "^0.24.3",
+    "eslint-config-nicjansma": "^1.0.4",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-jsoncombine": "^1.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-spawn-mocha": "^3.3.1",
+    "gulp-uglify": "^3.0.0",
+    "mocha": "^3.5.3"
+  },
+  "author": "Nic Jansma",
+  "license": "MIT",
+  "scripts": {
+    "test": "gulp travis --verbose"
+  }
+}

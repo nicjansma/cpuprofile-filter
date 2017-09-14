@@ -1,0 +1,6 @@
+.eslintrc
+.gitmodules
+.npmignore
+.travis.yml
+gulpfile.js
+test

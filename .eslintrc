@@ -1,0 +1,17 @@
+{
+    "extends": "nicjansma",
+    "env": {
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "rules": {
+        //
+        // Changes from nicjansma
+        //
+        "strict": [2, "safe"]
+    }
+}
