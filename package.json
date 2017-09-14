@@ -1,7 +1,7 @@
 {
   "name": "cpuprofile-filter",
   "version": "1.0.0",
-  "description": "",
+  "description": ".cpuprofile filter",
   "main": "src/cpuprofile-filter.js",
   "dependencies": {
     "json5": "^0.5.1",
