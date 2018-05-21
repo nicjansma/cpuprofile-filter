@@ -73,6 +73,8 @@ describe("CpuProfileFilter examples", function() {
                     expect(results).to.have.property("cpuTime");
                     expect(results).to.have.property("cpuTimeFiltered");
                     expect(results).to.have.property("idleTime");
+                    expect(results).to.have.property("programTime");
+                    expect(results).to.have.property("garbageTime");
                 };
             }(test)));
 

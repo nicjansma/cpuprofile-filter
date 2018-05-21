@@ -1,6 +1,6 @@
 # cpuprofile-filter
 
-v1.0.0
+v1.1.0
 
 [via Nic Jansma http://nicj.net](http://nicj.net)
 
@@ -99,9 +99,11 @@ Filters a `.cpuprofile` against the given config
     duration: 1000,         // duration (microseconds)
     sampleCount: 10,        // number of samples
     timePerSample: 100,     // time per sample (microseconds)
-    cpuTime: 1000,          // CPU time of the entire profile (microseconds)
+    cpuTime: 1000,          // CPU time of the entire profile (including Program and Garbage time) (microseconds)
     cpuTimeFiltered: 500,   // CPU time of the filtered functions (microseconds)
     idleTime: 0             // Idle time (microseconds)
+    programTime: 0          // Program (Chrome native) time (microseconds)
+    garbageTime: 0          // Garbage Collector time (microseconds)
 }
 ```
 
@@ -118,3 +120,4 @@ Or via ``gulp``:
 ## Version History
 
 * v1.0.0 - 2017-09-13: Initial version
+* v1.1.0 - 2018-05-20: Added `programTime` and `garbageTime` fields

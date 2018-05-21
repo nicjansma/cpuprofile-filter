@@ -83,6 +83,8 @@
         timePerSample: 100,
         cpuTime: 1000,
         cpuTimeFiltered: 900,
-        idleTime: 0
+        idleTime: 0,
+        programTime: 0,
+        garbageTime: 0
     }
 }

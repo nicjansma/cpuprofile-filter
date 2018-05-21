@@ -38,7 +38,7 @@
             {
                 id: 3,
                 callFrame: {
-                    functionName: "C",
+                    functionName: "(program)",
                     scriptId: "2",
                     url: "c.js",
                     lineNumber: 5,
@@ -49,7 +49,7 @@
             {
                 id: 4,
                 callFrame: {
-                    functionName: "D",
+                    functionName: "(garbage collector)",
                     scriptId: "3",
                     url: "d.js",
                     lineNumber: 7,
@@ -82,7 +82,7 @@
         cpuTime: 1000,
         cpuTimeFiltered: 0,
         idleTime: 0,
-        programTime: 0,
-        garbageTime: 0
+        programTime: 100,
+        garbageTime: 800
     }
 }

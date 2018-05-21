@@ -46,7 +46,9 @@ function filter(profile, config) {
         timePerSample: 0,
         cpuTime: 0,
         cpuTimeFiltered: 0,
-        idleTime: 0
+        idleTime: 0,
+        programTime: 0,
+        garbageTime: 0
     };
 
     // how much time each sample was for
@@ -63,6 +65,12 @@ function filter(profile, config) {
 
         if (node.callFrame && node.callFrame.functionName === "(idle)") {
             result.idleTime += node.cpuTime;
+        } else if (node.callFrame && node.callFrame.functionName === "(program)") {
+            result.programTime += node.cpuTime;
+            result.cpuTime += node.cpuTime;
+        } else if (node.callFrame && node.callFrame.functionName === "(garbage collector)") {
+            result.garbageTime += node.cpuTime;
+            result.cpuTime += node.cpuTime;
         } else {
             result.cpuTime += node.cpuTime;
         }
