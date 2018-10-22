@@ -98,7 +98,7 @@ function filter(profile, config) {
     _.each(filteredNodes, function(node) {
         result.cpuTimeFiltered += node.cpuTime;
 
-        if (process.env.DEBUG) {
+        if (process.env.DEBUG && process.env.DEBUG.split(" ").indexOf("cpuprofile-filter") !== -1) {
             /* eslint-disable no-console */
 
             // log how long this node took
